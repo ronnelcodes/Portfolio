@@ -204,6 +204,39 @@ main {
   .about-info .skill-amt {
     color: #D1DEDE; }
 
+/*==== PROJECTS ====*/
+.projects {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr); }
+  .projects img {
+    width: 100%;
+    height: 65%;
+    border: 2px #a29c9b solid; }
+    .projects img:hover {
+      opacity: 0.5;
+      border-color: #008D1B;
+      transition: all .3s ease-out;
+      transform: scale(1.1); }
+
+.btn, .btn-dark, .btn-light {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  border: 0;
+  margin-bottom: 5rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background-color: #008D1B;
+    color: #D1DEDE;
+    transition: all .2s ease-in-out; }
+
+.btn-dark {
+  background-color: black;
+  color: #D1DEDE; }
+
+.btn-light {
+  background-color: white;
+  color: #1F2421; }
+
 /*==== FOOTER ====*/
 #main-footer {
   text-align: center;
@@ -212,6 +245,16 @@ main {
   height: 60px; }
 
 /*==== MEDIA QUERY ====*/
+@media screen and (min-width: 1171px) {
+  /*==== PROJECTS ====*/
+  .projects {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  /*==== PROJECTS ====*/
+  .projects {
+    grid-template-columns: repeat(3, 1fr); } }
+
 @media screen and (max-width: 768px) {
   main {
     align-items: center;
@@ -219,6 +262,7 @@ main {
     main .lg-head {
       line-height: 1;
       margin-bottom: 1rem; }
+  /*==== MENU ====*/
   ul.menu-nav, div.menu-brand {
     float: none;
     width: 100%;
@@ -235,10 +279,17 @@ main {
     .menu-brand .portrait {
       width: 150px;
       height: 150px; }
+  /*==== ABOUT ====*/
   .about-info {
     grid-template-areas: 'bio-img' 'bio' 'job-1' 'job-2' 'job-3' 'job-4' 'job-5' 'job-6';
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  /*==== PROJECTS ====*/
+  .projects {
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {
-    margin-top: 10vh; } }
+    margin-top: 10vh; }
+  /*==== PROJECTS ====*/
+  .projects {
+    grid-template-columns: 1fr; } }

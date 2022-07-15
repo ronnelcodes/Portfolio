@@ -138,6 +138,52 @@ main {
 	}
 }
 
+/*==== PROJECTS ====*/
+
+.projects {
+	display: grid;
+	grid-gap: 1.5rem;
+	grid-template-columns: repeat(3, 1fr);
+
+	img {
+		width: 100%;
+		height: 65%;
+		border: 2px $fourth-color solid;
+
+		&:hover {
+			opacity: 0.5;
+			border-color: $second-color;
+			@include tran2;
+			transform: scale(1.1);
+		}
+	}
+}
+
+// Button Styles
+.btn {
+	display: inline-block;
+	padding: 0.3rem 1rem;
+	border: 0;
+	margin-bottom: 5rem;
+	&:hover {
+		background-color: $second-color;
+		color: $third-color;
+		@include tran3
+	}
+}
+
+.btn-dark {
+	@extend .btn;
+	background-color: darken($first-color, 50);
+	color: $third-color;
+}
+
+.btn-light {
+	@extend .btn;
+	background-color: lighten($third-color, 50);
+	color: $first-color;
+}
+
 /*==== FOOTER ====*/
 #main-footer {
 	text-align: center;
