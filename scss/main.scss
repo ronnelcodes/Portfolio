@@ -39,6 +39,10 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
+h2 {
+	color: $third-color;
+}
+
 a {
 	text-decoration: none;
 	color: $third-color;
@@ -184,12 +188,45 @@ main {
 	color: $first-color;
 }
 
+/*==== REACH ====*/
+.reach {
+	color: $third-color;
+}
+
+.boxes {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-top: 1rem;
+
+	div {
+		font-size: 2rem;
+		border: 3px $third-color solid;
+		padding: 1.5rem 2.5rem;
+		margin-bottom: 3rem;
+		@include tran2
+		&:hover {
+			padding: 0.5rem 1.5rem;
+			background-color: $second-color;
+			span{
+				color: $first-color;
+			}
+		}
+	}
+}
+
 /*==== FOOTER ====*/
 #main-footer {
 	text-align: center;
 	padding: 1rem;
 	background-color: $fourth-color;
 	height: 60px;
+}
+
+.footer {
+	color: $second-color;
+	cursor: pointer;
 }
 
 /*==== MEDIA QUERY ====*/

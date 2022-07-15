@@ -137,6 +137,9 @@ h1, h2, h3, h4, h5, h6 {
     color: #D1DEDE;
     background-color: rgba(0, 151, 29, 0.5); }
 
+h2 {
+  color: #D1DEDE; }
+
 a {
   text-decoration: none;
   color: #D1DEDE; }
@@ -237,12 +240,38 @@ main {
   background-color: white;
   color: #1F2421; }
 
+/*==== REACH ====*/
+.reach {
+  color: #D1DEDE; }
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .boxes div {
+    font-size: 2rem;
+    border: 3px #D1DEDE solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    transition: all .3s ease-out; }
+    .boxes div:hover {
+      padding: 0.5rem 1.5rem;
+      background-color: #008D1B; }
+      .boxes div:hover span {
+        color: #1F2421; }
+
 /*==== FOOTER ====*/
 #main-footer {
   text-align: center;
   padding: 1rem;
   background-color: #a29c9b;
   height: 60px; }
+
+.footer {
+  color: #008D1B;
+  cursor: pointer; }
 
 /*==== MEDIA QUERY ====*/
 @media screen and (min-width: 1171px) {
