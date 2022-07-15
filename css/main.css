@@ -223,7 +223,7 @@ main {
       transform: scale(1.1); }
 
 .btn, .btn-dark, .btn-light {
-  display: inline-block;
+  display: block;
   padding: 0.3rem 1rem;
   border: 0;
   margin-bottom: 5rem; }
