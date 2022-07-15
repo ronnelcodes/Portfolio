@@ -1,0 +1,140 @@
+//MENU BUTTON
+.menu-btn {
+    position: absolute;
+    z-index: 3;
+    right: 35px;
+    top: 35px;
+    cursor: pointer;
+    @include tran1;
+
+    .btn-line {
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        background-color: $third-color;
+        @include tran3;
+    }
+
+    /*==== ROTATE TO X ====*/
+    &.close {
+        transform: rotate(180deg);
+
+        .btn-line {
+            //Line 1 - Rotate
+            &:nth-child(1){
+                background-color: $second-color;
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            //Line 2 - Hide
+            &:nth-child(2){
+                opacity: 0;
+            }
+            //Line 3 - Rotate
+            &:nth-child(3){
+                background-color: $second-color;
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+    }
+}
+
+//MENU OVERLAY 
+.menu {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	opacity: 0.9;
+	visibility: hidden;
+	
+    &.show {
+        visibility: visible;
+    }
+
+    &-brand, &-nav {
+		display: flex;
+		flex-flow: column wrap;
+		align-items: center;
+        float: left;
+		justify-content: center;
+		width: 50%;
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	&-nav {
+		margin: 0;
+		padding: 0;
+		background-color: darken($fourth-color, 2);
+        list-style: none;
+        transform: translate3d(0, -100%, 0);
+        @include tran2;
+
+        &.show {
+            //Slide in
+            transform: translate3d(0, 0, 0);
+        }
+
+	}
+
+    //Branding Side
+    &-brand {
+        background-color: $first-color;
+        @include tran2;
+        transform: translate3d(0, 100%, 0);
+
+    &.show {
+        //Slide in
+        transform: translate3d(0, 0, 0);
+        }
+
+        .portrait {
+            width: 250px;
+            height: 250px;
+            background-image: url('../img/Ronnel-NBG.png');
+            background-position: center;
+            background-size: cover;
+            border-radius: 50%;
+            border: solid 3px $third-color;
+        }
+    }
+
+    .nav-item {
+        transform: translate3d(600px, 0, 0);
+        @include tran2
+
+        &.show {
+            //Slide in right
+            transform: translate3d(0, 0, 0);    
+        }
+
+        &.current > a {
+            color: $fifth-color;
+
+        }
+    }
+
+    .nav-link {
+        display: inline-block;
+        position: relative;
+        font-size: 30px;
+        color: $first-color;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        text-decoration: none;
+        @include tran3;
+        &:hover {
+			color: $second-color;
+		}
+    }
+    
+	
+}
+
+
+//Delay each nav link
+@for $x from 1 through 4 {
+    .nav-item:nth-child(#{$x}) {
+        transition-delay: $x * 0.1s;
+    }
+}

@@ -1,0 +1,150 @@
+@import 'config';
+@import 'menu';
+
+@font-face {
+	font-family: 'HelveticaNeue';
+	src: url('../dist/fonts/HelveticaNeueLTStd-Lt.otf') format('openface');
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	@include ground;
+	background-color: $first-color;
+	font-size: 1.1rem;
+	color: set-text-color($first-color);
+	font-family: 'HelveticaNeue', sans-serif;
+	margin: 0;
+	height: 100%;
+	line-height: 1.5;
+}
+
+/*==== HEADINGS ====*/
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	font-weight: 400;
+  
+	&.lg-head {
+	font-size: 6rem;
+	color: $third-color;
+    }
+
+  &.sm-head {
+	margin-bottom: 2rem;
+	padding: 0.2rem 1rem;
+	color: $third-color;
+	background-color: rgba(lighten($second-color, 2), 0.5)
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $third-color;
+}
+
+header {
+	position: fixed;
+	z-index: 2;
+	width: 100%;
+}
+
+.text-second {
+	color: $second-color;
+}
+
+main {
+	padding: 4rem;
+	//height: 100%;
+	min-height: calc(100vh - 60px);
+	.icons {
+		margin-top: 1rem;
+		a {
+			padding: 1rem;
+			&:hover {
+				color: $second-color;
+				@include tran1();
+				transform: scale(1.5);
+			}
+		}
+	}
+	&#home {
+		overflow: hidden;
+		h1 {
+			margin-top: 20vh;
+		}
+}
+}
+
+/*==== ABOUT ====*/
+.about-info {
+	display: grid;
+	grid-gap: 30px;
+	grid-template-areas: 
+	'bio-img bio bio'
+	'job-1 job-2 job-3'
+	'job-4 job-5 job-6';
+	grid-template-columns: repeat(3, 1fr);
+
+	.bio-img {
+		grid-area: bio-img;
+		margin: auto;
+		border-radius: 50%;
+		border: solid 3px $third-color;
+		width: 300px;
+		height: 300px;
+	}
+	
+	.bio {
+		grid-area: bio;
+		font-size: 1.25rem;
+		color: $third-color	;
+	}
+	
+	.job {
+		background-color: lighten($first-color, 5);
+		padding: 0.5rem;
+		border-bottom: $fifth-color 5px solid;
+	}
+	
+	.job-1 {
+		color: $third-color;
+		grid-area: job-1;
+	}
+	
+	.job-2 {
+		color: $third-color;
+		grid-area: job-2;
+	}
+	
+	.job-3 {
+		color: $third-color;
+		grid-area: job-3;
+	}
+	
+	.job-4 {
+		color: $third-color;
+		grid-area: job-4;
+	}
+	
+	.job-5 {
+		color: $third-color;
+		grid-area: job-5;
+	}
+
+	.skill-amt {
+		color: $third-color;
+	}
+}
+
+/*==== FOOTER ====*/
+#main-footer {
+	text-align: center;
+	padding: 1rem;
+	background-color: $fourth-color;
+	height: 60px;
+}
+
+/*==== MEDIA QUERY ====*/
+@import 'mobile';
